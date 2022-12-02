@@ -1,4 +1,4 @@
-export const day1Input = `5324
+5324
 5176
 2197
 2701
@@ -2252,4 +2252,4 @@ export const day1Input = `5324
 5897
 3946
 1457
-4469`
+4469

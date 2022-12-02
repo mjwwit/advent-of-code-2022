@@ -6,8 +6,8 @@ import * as TE from 'fp-ts/TaskEither'
 import { pipe } from 'fp-ts/function'
 import * as S from 'fp-ts/string'
 import * as t from 'io-ts'
-import { toSumFromNumbers } from '../lib/sum'
-import { toErrorFromValidation } from '../lib/validation-error'
+import { toSumFromNumbers } from '../common/sum'
+import { toErrorFromValidation } from '../common/validation-error'
 
 enum Shape {
   ROCK = 'ROCK',
