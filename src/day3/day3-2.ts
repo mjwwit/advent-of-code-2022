@@ -3,13 +3,13 @@ import * as TE from 'fp-ts/TaskEither'
 import { pipe } from 'fp-ts/function'
 import { TEtoPromise } from '../common/fp-ts-task-either'
 import { toTextFileContentsFromFilename } from '../common/read-file'
-import { toSumOfTop3HighestCalories } from './top3-calories-sum'
+import { toSumOfElfGroupBadgeTypePriorities } from './sum-elf-group-badge-priorities'
 
 const calculatingResult = pipe(
-  join(__dirname, 'calories.txt'),
+  join(__dirname, 'rucksack-contents.txt'),
   toTextFileContentsFromFilename,
-  TE.chainEitherK(toSumOfTop3HighestCalories),
-  TE.map((n) => `The top 3 elves have ${n} calories`),
+  TE.chainEitherK(toSumOfElfGroupBadgeTypePriorities),
+  TE.map((n: number) => `The total priority of group badges is ${n}`),
   TEtoPromise,
 )
 

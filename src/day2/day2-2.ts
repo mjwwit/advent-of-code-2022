@@ -1,4 +1,3 @@
-import { readFile } from 'fs/promises'
 import { join } from 'path'
 import * as E from 'fp-ts/Either'
 import * as RA from 'fp-ts/ReadonlyArray'
@@ -6,6 +5,7 @@ import * as TE from 'fp-ts/TaskEither'
 import { pipe } from 'fp-ts/function'
 import * as S from 'fp-ts/string'
 import * as t from 'io-ts'
+import { toTextFileContentsFromFilename } from '../common/read-file'
 import { toSumFromNumbers } from '../common/sum'
 import { toErrorFromValidation } from '../common/validation-error'
 
@@ -105,7 +105,7 @@ const toScoreFromRound = (you: Shape, them: Shape): number =>
 
 const result = pipe(
   join(__dirname, 'encrypted-strategy-guide.txt'),
-  TE.tryCatchK((filename) => readFile(filename, 'utf8'), E.toError),
+  toTextFileContentsFromFilename,
   TE.chainEitherK(toMatchupsFromStrategyGuide),
   TE.match(
     (e) => e.stack || e.message,
