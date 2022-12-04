@@ -10,7 +10,10 @@
     "day2-1": "ts-node src/day2/day2-1.ts",
     "day2-2": "ts-node src/day2/day2-2.ts",
     "day3-1": "ts-node src/day3/day3-1.ts",
-    "day3-2": "ts-node src/day3/day3-2.ts"
+    "day3-2": "ts-node src/day3/day3-2.ts",
+    "day4-1": "ts-node src/day4/day4-1.ts",
+    "day4-2": "ts-node src/day4/day4-2.ts"
+
   },
   "author": "Michael de Wit <mjwwit@gmail.com>",
   "license": "ISC",
